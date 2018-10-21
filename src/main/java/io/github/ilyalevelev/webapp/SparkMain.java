@@ -23,18 +23,18 @@ public class SparkMain {
             // Here create 3 News objects and put them in a list
             // Loop through the list and built the html
 
-            News news1 = new News(title "Badalona opens new Port", text "Today Badalona opened it new port that will connect the city with the sea")
-            News news2 = new News(title "Microsoft acquires GitHub", text "The big Software giant says connecting with IT engineers becomes increasingly important")
-            News news3 = new News(title "New James Bond movie arrives in Cinema", text "Daniel Craig said it will be the last time he stars in a James Bond movie")
+            News news1 = new News("Badalona opens new Port", "Today Badalona opened it new port that will connect the city with the sea")
+            News news2 = new News("Microsoft acquires GitHub","The big Software giant says connecting with IT engineers becomes increasingly important")
+            News news3 = new News("New James Bond movie arrives in Cinema", "Daniel Craig said it will be the last time he stars in a James Bond movie")
 
-            List<News> News = new ArrayList<>();
+            List<News> news = new ArrayList<>();
             News.add(news1);
             News.add(news2);
             News.add(news3);
 
-            for (News N : News) {
-                String html = "";
-                html = html + "<h1>The news</h1>\n"
+
+            for (News N : news) {
+                System.out.println(N.title + N.text);
 
 
             }

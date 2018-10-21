@@ -2,10 +2,10 @@ package io.github.ilyalevelev.webapp;
 
 public class News {
 
-    string title;
-    string text;
+    String title;
+    String text;
 
-    Public News (string title, string text){
+    Public News (String title, String text){
 
         this.title = title;
         this.text = text;
