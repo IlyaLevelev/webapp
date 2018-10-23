@@ -12,7 +12,12 @@ public class SparkMain {
 
     public static void main(String[] args) {
 
-        Spark.get("/about", (req, res) -> "about the company");
+        Spark.get("/about", (req, res) -> {
+
+            System.out.println("calling about");
+
+            return "<h1>about page</h1> more";
+        });
 
         // When you launch the server, you can access this endpoint with http://localhost:4567/news
         Spark.get("/news", (req, res) -> {
@@ -32,19 +37,14 @@ public class SparkMain {
             news.add(news2);
             news.add(news3);
 
+            String html = "";
+            html = "<h1>Headline</h1>";
 
             for (News n : news) {
                 System.out.println(n.title + n.text);
-
-
+                html = html + "<h3>" + n.title + "</h3>\n";
+                html = html + "<p>" + n.text + "</p>";
             }
-
-            String html = "";
-            html = html + "<h1>The news</h1>\n";
-
-            // You will remove this part, because you will add the actual news
-            html = html + "<h3>Hurricane in Texas</h3>\n";
-            html = html + "<p>There was bla bla...<p>";
 
             System.out.println(html);
 
